@@ -1,0 +1,17 @@
+set_rate_fb <- 0.1
+set_memory <- 2
+get_adstock_fb <- rep(set_rate_fb, set_memory+1) ^ c(0:set_memory)
+
+ads_fb <- stats::filter(c(rep(0, set_memory), sampledf$facebook), get_adstock_fb, method="convolution")
+
+x <- 1:100
+filter(x, rep(1, 3))
+filter(x, rep(1, 3), sides = 2)
+
+
+df<-data.frame(
+  var1=c(1,2,3,4),
+  var2=LETTERS[1:4]
+)
+
+df_with_names<-setNames(df, c("NUM","CAT"))
