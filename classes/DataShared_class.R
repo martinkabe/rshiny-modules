@@ -4,6 +4,11 @@ SharedData <- R6Class("SharedData",
     
     removeDash=function(x){
       return(gsub("-", "", x))
+    },
+    
+    getTimeHuman=function() {
+      format(Sys.time(), "%Y%m%d-%H%M%OS")
     }
+    
   )
 )
